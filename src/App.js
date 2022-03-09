@@ -9,7 +9,7 @@ const storesAPI = ' http://localhost:8085/stores'
 function App() {
 
   const [stores, setStores] = useState([]);
-  const [search, setSearch] = useState('');
+  const [searchText, setSearchText] = useState('');
 
   useEffect(()=>{
     fetch(storesAPI)
@@ -34,19 +34,21 @@ function App() {
     })
   }
 
-  function filterSearch(searchStore){
-    const searchName = search.filter(item =>{
-      
-    })
+  function handleSearch(searchText){
+    setSearchText(searchText);
   }
+  const filteredData = stores.filter((store) =>{
+    const upperSearchText = searchText.toUpperCase();
+    return store.name.toUpperCase().includes(upperSearchText)
+  })
 
   return (
     <div className="main-container">
       <img src="/images/bobsburgers.png" />
       <h1>Neighbor Stores</h1>
-      <Search />
+      <Search handleSearch={handleSearch} />
       <NewStoreForm handleAddStore={handleAddStore} />
-      <StoreList stores={stores} />
+      <StoreList stores={filteredData} />
     </div>
   );
 }

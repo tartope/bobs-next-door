@@ -1975,6 +1975,13 @@
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
       "season": "20",
       "episode": "100"
+    },
+    {
+      "name": "fairway",
+      "image": "https://bobsburgers-api.herokuapp.com/images/storeNextDoor/1.jpg",
+      "season": "20",
+      "episode": "100",
+      "id": 229
     }
   ]
 }

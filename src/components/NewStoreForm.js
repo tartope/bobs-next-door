@@ -1,9 +1,9 @@
 import React from "react"
-import { v4 as uuid } from "uuid"
+// import { v4 as uuid } from "uuid"
 
 function NewStoreForm({ handleAddStore }) {
 
-    function submitStore(event){
+    function handleSubmitForm(event){
         // const selectElement = event.target.value
         const name = event.target['name'].value
         const image = event.target['image'].value
@@ -11,7 +11,7 @@ function NewStoreForm({ handleAddStore }) {
         const episode = event.target['episode'].value
 
         const newStore = {
-            id: uuid(),
+            // id: uuid(),
             name: name,
             image: image,
             season: season,
@@ -21,7 +21,7 @@ function NewStoreForm({ handleAddStore }) {
     }
 
     return(
-        <form onSubmit={submitStore}>
+        <form onSubmit={handleSubmitForm}>
             <input type="text" id="name" placeholder="Store Name"/>
             <input type="text" id="image" placeholder="Image URL" />
             <input type="number" id="season" placeholder="Season" step="1"/>
