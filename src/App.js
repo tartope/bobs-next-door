@@ -34,19 +34,20 @@ function App() {
     })
   }
 
-  function handleSearch(searchText){
-    setSearchText(searchText);
+  function handleSearch(userInput){
+    setSearchText(userInput)
   }
-  const filteredStores = stores.filter((store) =>{
-    const upperSearchText = searchText.toUpperCase();
+  const filteredStores = stores.filter(store =>{
+    const upperSearchText = searchText.toUpperCase()
     return store.name.toUpperCase().includes(upperSearchText)
   })
+  
 
   return (
     <div className="main-container">
       <img src="/images/bobsburgers.png" />
       <h1>Neighbor Stores</h1>
-      <Search handleSearch={handleSearch} />
+      <Search  handleSearch={handleSearch} />
       <NewStoreForm handleAddNewStore={handleAddNewStore} />
       <StoreList stores={filteredStores} />
     </div>

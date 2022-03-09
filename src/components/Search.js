@@ -4,8 +4,8 @@ function Search( { handleSearch }) {
 
     function handleChange(event){
         event.preventDefault();
-        const searchText = event.target.value
-        handleSearch(searchText)
+        const userInput = event.target.value
+        handleSearch(userInput)
     }
 
     return(
