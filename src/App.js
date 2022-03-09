@@ -20,7 +20,7 @@ function App() {
     })
   }, [])
 
-  function handleAddStore(store){
+  function handleAddNewStore(store){
     fetch(storesAPI, {
       method: 'POST',
       headers: {
@@ -37,7 +37,7 @@ function App() {
   function handleSearch(searchText){
     setSearchText(searchText);
   }
-  const filteredData = stores.filter((store) =>{
+  const filteredStores = stores.filter((store) =>{
     const upperSearchText = searchText.toUpperCase();
     return store.name.toUpperCase().includes(upperSearchText)
   })
@@ -47,8 +47,8 @@ function App() {
       <img src="/images/bobsburgers.png" />
       <h1>Neighbor Stores</h1>
       <Search handleSearch={handleSearch} />
-      <NewStoreForm handleAddStore={handleAddStore} />
-      <StoreList stores={filteredData} />
+      <NewStoreForm handleAddNewStore={handleAddNewStore} />
+      <StoreList stores={filteredStores} />
     </div>
   );
 }

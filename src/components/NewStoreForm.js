@@ -1,7 +1,7 @@
 import React from "react"
 // import { v4 as uuid } from "uuid"
 
-function NewStoreForm({ handleAddStore }) {
+function NewStoreForm({ handleAddNewStore }) {
 
     function handleSubmitForm(event){
         // const selectElement = event.target.value
@@ -17,7 +17,7 @@ function NewStoreForm({ handleAddStore }) {
             season: season,
             episode: episode,
         }
-        handleAddStore(newStore)
+        handleAddNewStore(newStore)
     }
 
     return(

@@ -1982,6 +1982,13 @@
       "season": "20",
       "episode": "100",
       "id": 229
+    },
+    {
+      "name": "big cheese",
+      "image": "https://bobsburgers-api.herokuapp.com/images/storeNextDoor/1.jpg",
+      "season": "21",
+      "episode": "101",
+      "id": 230
     }
   ]
 }
